@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="sectionHomepage">
+        <div class="bg-container">
+            <h1 class="heading-style">Personal Portfolio</h1>
+            <div class="button-style">
+                <button class="btn btn-success button-space" onclick="display('sectionAbout')">About</button>
+                <button class="btn btn-success button-space" onclick="display('sectionSkills')">Skills</button>
+                <button class="btn btn-success button-space" onclick="display('sectionContact')">Contact</button>
+            </div>
+            <div>
+                <h1 class="heading-name">Hi,I'm KrishnaVarun👋</h1>
+                <div class="d-flex flex-row justify-content-center">
+                <img src="https://cdn3.iconfinder.com/data/icons/avatars-flat/33/man_5-512.png" height="250px" width="300px" class="image-style" />
+                </div>
+                <p class="paragraph-descriptiion">I'm a student at Sri Eswar College of engineering and a fellow at Nextwave CCBP 4.0,I am in the path of learning Full satack development and Video editing Skills 📷 </p>
+            </div>
+        </div>
+    </div>
+    <div id="sectionAbout">
+        <div class="homepagebg-conatiner">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.QyJagH6OYNVD7BfjPlYcxAHaE8&pid=Api&P=0&h=180" height="200px" class="image-style" />
+            <p class="homepagedescriptions">I am Krishnavarun and I am From Coimbatore . I am Pursuing my B.E CSE degree at Sri Eswar College Of Engineering And also a fellow at NXTWAVE CCBP 4.0.I'm learning a video editing and fullstack development in the classes.</p>
+            <center><button class="btn btn-success" onclick="display('sectionHomepage')">Back</button></center>
+        </div>
+    </div>
+    <div id="sectionSkills">
+        <div class="skills-bg-container">
+            <h1 class="heading-skill-page">Skills I have Obtained till this stage is:</h1>
+            <center>
+                <ul style="list-style-type:none" class="ul">
+                    <li style="padding-top:20px">frontend development</li>
+                    <li style="padding-top:20px">Communication</li>
+                    <li style="padding-top:20px">Video editing</li>
+                    <li style="padding-top:20px">Poster making</li>
+                    <li style="padding-top:20px">Photography</li>
+                </ul>
+                <button class="btn btn-success" onclick="display('sectionHomepage')">Back</button>
+            </center>
+        </div>
+    </div>
+    <div id="sectionContact">
+            <div class="containerContact">  
+                <form id="contact" action="https://api.web3forms.com/submit" method="POST"">
+                  <h3>Quick Contact</h3>
+                  <h4>Contact us today, and get reply with in 24 hours!</h4>
+                  <input type="hidden" name="access_key" value="ef80ddd9-ab09-405a-8b84-a18cc387b5ab">
+                  <fieldset>
+                    <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+                  </fieldset>
+                  <fieldset>
+                    <input placeholder="Your Email Address" type="email" tabindex="2" required>
+                  </fieldset>
+                  <fieldset>
+                    <input placeholder="Your Phone Number" type="tel" tabindex="3" required>
+                  </fieldset>
+                  <fieldset>
+                    <textarea placeholder="Type your Message Here...." tabindex="5" required></textarea>
+                  </fieldset>
+                  <fieldset>
+                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                  </fieldset>
+                </form>
+              
+            </div>
+    </div>
+    <script type="text/javascript" src="https://new-assets.ccbp.in/frontend/content/static-ccbp-ui-kit/static-ccbp-ui-kit.js"></script>
+</body>
+</html>
