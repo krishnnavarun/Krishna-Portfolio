@@ -69,7 +69,7 @@ function Achievements({ activeSection }) {
           top: 0,
           bottom: 0,
           width: '2px',
-          backgroundColor: 'rgba(49, 87, 79, 0.1)',
+          backgroundColor: 'rgba(14, 36, 49, 0.1)',
           transform: 'translateX(-50%)'
         }} />
 
@@ -133,8 +133,8 @@ function Achievements({ activeSection }) {
                       {m.year}
                     </span>
                     <span style={{
-                      background: 'rgba(49, 87, 79, 0.05)',
-                      border: '1px solid rgba(49, 87, 79, 0.1)',
+                      background: 'rgba(14, 36, 49, 0.05)',
+                      border: '1px solid rgba(14, 36, 49, 0.1)',
                       color: 'var(--color-emerald)',
                       fontSize: '0.68rem',
                       fontWeight: 700,

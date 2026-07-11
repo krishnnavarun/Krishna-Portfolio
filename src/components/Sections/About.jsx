@@ -31,11 +31,11 @@ function About({ activeSection }) {
 
   // Individual item details
   const details = [
-    { icon: <GraduationCap size={22} color="#C19A6B" />, label: "CSE Student", desc: "Specializing in Computer Science & Engineering, building computational logic." },
-    { icon: <Award size={22} color="#C19A6B" />, label: "Sri Eshwar College of Engineering", desc: "Pursuing Bachelor of Engineering, Class of 2024-2028." },
-    { icon: <Award size={22} color="#C19A6B" />, label: "8.2 CGPA (IIIrd Sem)", desc: "Consistently maintaining academic excellence and top performance." },
-    { icon: <Code size={22} color="#C19A6B" />, label: "MERN Stack Developer", desc: "Expert in building complex full-stack web applications from database to client UI." },
-    { icon: <Brain size={22} color="#C19A6B" />, label: "AI Enthusiast", desc: "Integrating Large Language Models and automated neural agent workflows." }
+    { icon: <GraduationCap size={22} color="#FF7B00" />, label: "CSE Student", desc: "Specializing in Computer Science & Engineering, building computational logic." },
+    { icon: <Award size={22} color="#FF7B00" />, label: "Sri Eshwar College of Engineering", desc: "Pursuing Bachelor of Engineering, Class of 2024-2028." },
+    { icon: <Award size={22} color="#FF7B00" />, label: "8.2 CGPA (IIIrd Sem)", desc: "Consistently maintaining academic excellence and top performance." },
+    { icon: <Code size={22} color="#FF7B00" />, label: "MERN Stack Developer", desc: "Expert in building complex full-stack web applications from database to client UI." },
+    { icon: <Brain size={22} color="#FF7B00" />, label: "AI Enthusiast", desc: "Integrating Large Language Models and automated neural agent workflows." }
   ]
 
   return (
@@ -95,14 +95,14 @@ function About({ activeSection }) {
             fontFamily: 'var(--font-display)',
             fontSize: '1.3rem',
             color: 'var(--color-emerald)',
-            borderBottom: '1px solid rgba(49, 87, 79, 0.12)',
+            borderBottom: '1px solid rgba(14, 36, 49, 0.12)',
             paddingBottom: '12px',
             marginBottom: '4px',
             display: 'flex',
             alignItems: 'center',
             gap: '8px'
           }}>
-            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#7C9A92' }}></span>
+            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--color-gold)' }}></span>
             CRITERIA & CREDENTIALS
           </h3>
 
@@ -118,14 +118,14 @@ function About({ activeSection }) {
               transition={{ type: 'spring', stiffness: 200 }}
             >
               <div style={{
-                background: 'rgba(49, 87, 79, 0.05)',
+                background: 'rgba(14, 36, 49, 0.05)',
                 padding: '10px',
                 borderRadius: '12px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 flexShrink: 0,
-                border: '1px solid rgba(49, 87, 79, 0.08)'
+                border: '1px solid rgba(14, 36, 49, 0.08)'
               }}>
                 {item.icon}
               </div>

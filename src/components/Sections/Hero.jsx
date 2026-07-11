@@ -1,53 +1,54 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, MessageSquare } from 'lucide-react'
+import { ArrowDownCircle, Linkedin, Github, Instagram, Camera, Code2, Terminal } from 'lucide-react'
 
-function Hero({ activeSection }) {
-  const nameLetters = "KRISHNA VARUN K".split("")
-  
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.05,
-        delayChildren: 0.2
-      }
-    }
-  }
-  
-  const letterVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 40,
-      scale: 0.5,
-      filter: "blur(4px)"
-    },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      scale: 1,
-      filter: "blur(0px)",
-      transition: { 
-        type: "spring",
-        stiffness: 80,
-        damping: 10
-      }
-    }
-  }
+function Hero() {
+  const roles = [
+    "Frontend Developer",
+    "Backend Developer",
+    "MERN Stack Developer",
+    "AI Solutions Engineer"
+  ]
 
-  const subVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 1.2,
-        duration: 0.8,
-        ease: [0.16, 1, 0.3, 1]
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0)
+  const [currentText, setCurrentText] = useState('')
+  const [isDeleting, setIsDeleting] = useState(false)
+  const [typingSpeed, setTypingSpeed] = useState(100)
+  const [imageError, setImageError] = useState(false)
+
+  // Smooth custom typing animation
+  useEffect(() => {
+    let timer
+    const activeRole = roles[currentRoleIndex]
+
+    const handleType = () => {
+      if (!isDeleting) {
+        // Typing letters
+        setCurrentText(activeRole.substring(0, currentText.length + 1))
+        setTypingSpeed(100) // standard typing speed
+
+        if (currentText === activeRole) {
+          // Pause when word is complete
+          timer = setTimeout(() => setIsDeleting(true), 2000)
+          return
+        }
+      } else {
+        // Deleting letters
+        setCurrentText(activeRole.substring(0, currentText.length - 1))
+        setTypingSpeed(50) // deleting speed is faster
+
+        if (currentText === '') {
+          setIsDeleting(false)
+          setCurrentRoleIndex((prev) => (prev + 1) % roles.length)
+          setTypingSpeed(300) // brief pause before next word
+          return
+        }
       }
     }
-  }
+
+    timer = setTimeout(handleType, typingSpeed)
+    return () => clearTimeout(timer)
+  }, [currentText, isDeleting, currentRoleIndex])
 
   const handleScrollTo = (id) => {
     const el = document.getElementById(id)
@@ -56,127 +57,99 @@ function Hero({ activeSection }) {
     }
   }
 
+  // Social Links mapping
+  const socials = [
+    { icon: <Linkedin size={20} />, url: 'https://linkedin.com/in/krishnnavarun', label: 'LinkedIn' },
+    { icon: <Github size={20} />, url: 'https://github.com/krishnnavarun', label: 'GitHub' },
+    { icon: <Instagram size={20} />, url: 'https://instagram.com/krishnnavarun', label: 'Instagram' },
+    { icon: <Camera size={20} />, url: 'https://twitter.com/krishnnavarun', label: 'Twitter' },
+    { icon: <Code2 size={20} />, url: 'https://leetcode.com/krishnavarun', label: 'LeetCode' },
+    { icon: <Terminal size={20} />, url: 'https://hackerrank.com/krishnnavarun', label: 'HackerRank' }
+  ]
+
   return (
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      textAlign: 'center',
-      width: '100%',
-      minHeight: '80vh',
-      zIndex: 10
-    }}>
-      {/* Decorative tag */}
-      <motion.span 
-        initial={{ opacity: 0, letterSpacing: '0.05em' }}
-        animate={{ opacity: 1, letterSpacing: '0.15em' }}
-        transition={{ duration: 1.2 }}
-        className="section-tag"
-      >
-        PORTFOLIO INTRO
-      </motion.span>
+    <div className="hero-split-container">
+      {/* Left side: Intro & Actions */}
+      <div className="hero-text-side">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
+          <h2 className="hero-welcome">Hi There,</h2>
+          <h1 className="hero-name">
+            I'm Krishna <span className="name-accent">Varun</span>
+          </h1>
 
-      {/* Main typography (Name assembles from particles) */}
-      <motion.h1 
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        style={{
-          fontFamily: "'Outfit', sans-serif",
-          fontSize: 'clamp(2.5rem, 8vw, 5.5rem)',
-          fontWeight: 800,
-          color: '#31574F', // Deep Emerald
-          lineHeight: 1.05,
-          textTransform: 'uppercase',
-          display: 'flex',
-          justifyContent: 'center',
-          flexWrap: 'wrap',
-          gap: '0.02em',
-          marginBottom: '10px'
-        }}
-      >
-        {nameLetters.map((char, index) => (
-          <motion.span 
-            key={index} 
-            variants={letterVariants}
-            style={{ 
-              display: 'inline-block',
-              whiteSpace: char === " " ? "pre" : "normal"
-            }}
+          <div className="hero-typing-container">
+            <span className="hero-typing-prefix">I Am Into </span>
+            <span className="hero-typing-text">
+              {currentText}
+              <span className="typing-cursor">|</span>
+            </span>
+          </div>
+
+          <button
+            onClick={() => handleScrollTo('about')}
+            className="hero-cta-btn"
           >
-            {char}
-          </motion.span>
-        ))}
-      </motion.h1>
+            About Me <ArrowDownCircle size={18} />
+          </button>
 
-      {/* Roles Subheading */}
-      <motion.div
-        variants={subVariants}
-        initial="hidden"
-        animate="visible"
-        style={{
-          display: 'flex',
-          gap: '12px',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexWrap: 'wrap',
-          marginBottom: '25px',
-          fontFamily: "'Outfit', sans-serif",
-          fontSize: 'clamp(1rem, 2.5vw, 1.4rem)',
-          fontWeight: 500,
-          color: '#C19A6B' // Copper Gold
-        }}
-      >
-        <span>Software Engineer</span>
-        <span style={{ opacity: 0.4 }}>•</span>
-        <span>MERN Developer</span>
-        <span style={{ opacity: 0.4 }}>•</span>
-        <span>AI Product Builder</span>
-      </motion.div>
+          {/* Social Icons Grid */}
+          <div className="hero-socials-row">
+            {socials.map((social, index) => (
+              <motion.a
+                key={index}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="hero-social-icon"
+                whileHover={{ y: -5, scale: 1.1 }}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 + index * 0.08, duration: 0.5 }}
+              >
+                {social.icon}
+              </motion.a>
+            ))}
+          </div>
+        </motion.div>
+      </div>
 
-      {/* Brief Pitch statement */}
-      <motion.p
-        variants={subVariants}
-        initial="hidden"
-        animate="visible"
-        style={{
-          maxWidth: '620px',
-          fontSize: 'clamp(1rem, 1.8vw, 1.15rem)',
-          color: '#555555',
-          fontFamily: "'Inter', sans-serif",
-          marginBottom: '40px',
-          lineHeight: 1.6
-        }}
-      >
-        Building scalable products, intelligent systems and production-ready applications.
-      </motion.p>
-
-      {/* Interactive CTA buttons */}
-      <motion.div
-        variants={subVariants}
-        initial="hidden"
-        animate="visible"
-        style={{
-          display: 'flex',
-          gap: '16px',
-          justifyContent: 'center',
-          flexWrap: 'wrap'
-        }}
-      >
-        <button 
-          onClick={() => handleScrollTo('projects')}
-          className="btn-primary"
+      {/* Right side: Profile Circle Frame */}
+      <div className="hero-image-side">
+        <motion.div
+          className="hero-circle-frame"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
         >
-          View Projects <ArrowRight size={18} />
-        </button>
-        <button 
-          onClick={() => handleScrollTo('contact')}
-          className="btn-secondary"
-        >
-          Contact Me <MessageSquare size={18} />
-        </button>
-      </motion.div>
+          {!imageError ? (
+            <motion.img
+              src="/profile.jpg"
+              alt="Krishna Varun"
+              className="hero-astronaut-img"
+              onError={() => setImageError(true)}
+              animate={{
+                y: [0, -8, 0]
+              }}
+              transition={{
+                y: {
+                  repeat: Infinity,
+                  duration: 5.0,
+                  ease: 'easeInOut'
+                }
+              }}
+            />
+          ) : (
+            <div className="profile-placeholder">
+              <span>KV</span>
+            </div>
+          )}
+        </motion.div>
+      </div>
     </div>
   )
 }

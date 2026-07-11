@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
-import MainCanvas from './components/MainCanvas'
+import Navbar from './components/Navbar'
+import ConstellationBackground from './components/ConstellationBackground'
 import Hero from './components/Sections/Hero'
 import About from './components/Sections/About'
 import Skills from './components/Sections/Skills'
@@ -48,10 +49,11 @@ function App() {
 
   return (
     <div className="app-container" ref={containerRef}>
-      {/* Background 3D Canvas */}
-      <div className="canvas-container canvas-interactive">
-        <MainCanvas scrollProgress={scrollProgress} activeSection={activeSection} />
-      </div>
+      {/* Sticky Premium Navigation Bar */}
+      <Navbar activeSection={activeSection} />
+
+      {/* Background Interactive Constellation Network */}
+      <ConstellationBackground />
 
       {/* Foreground Scroll Sections */}
       <div className="scroll-container">

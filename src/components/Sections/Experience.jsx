@@ -45,7 +45,7 @@ function Experience({ activeSection }) {
           style={{ 
             padding: '30px', 
             position: 'relative',
-            border: '1px solid rgba(49, 87, 79, 0.08)',
+            border: '1px solid rgba(14, 36, 49, 0.08)',
             boxShadow: '0 15px 40px rgba(0, 0, 0, 0.02)'
           }}
         >
@@ -54,8 +54,8 @@ function Experience({ activeSection }) {
             position: 'absolute',
             top: '20px',
             right: '25px',
-            background: 'rgba(193, 154, 107, 0.12)',
-            border: '1px solid rgba(193, 154, 107, 0.25)',
+            background: 'rgba(255, 123, 0, 0.12)',
+            border: '1px solid rgba(255, 123, 0, 0.25)',
             color: 'var(--color-gold)',
             padding: '4px 10px',
             borderRadius: '20px',
@@ -67,7 +67,7 @@ function Experience({ activeSection }) {
 
           <div style={{ display: 'flex', gap: '14px', alignItems: 'center', marginBottom: '20px' }}>
             <div style={{
-              background: 'rgba(49, 87, 79, 0.08)',
+              background: 'rgba(14, 36, 49, 0.08)',
               padding: '12px',
               borderRadius: '50%',
               display: 'flex',
@@ -132,7 +132,7 @@ function Experience({ activeSection }) {
             boxShadow: '0 10px 30px rgba(0,0,0,0.02)',
             position: 'relative',
             overflow: 'hidden',
-            border: '1px solid rgba(49, 87, 79, 0.08)'
+            border: '1px solid rgba(14, 36, 49, 0.08)'
           }}
         >
           <h3 style={{
@@ -221,7 +221,7 @@ function Experience({ activeSection }) {
           <div style={{
             height: '40px',
             width: '2px',
-            background: 'rgba(49, 87, 79, 0.15)',
+            background: 'rgba(14, 36, 49, 0.15)',
             position: 'relative'
           }}>
             {/* Flowing dot downwards */}

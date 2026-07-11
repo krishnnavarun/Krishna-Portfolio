@@ -21,12 +21,22 @@ function Leetcode({ activeSection }) {
     "--------------------------------------------------"
   ]
 
+  // State to track if animation has started
+  const [hasStarted, setHasStarted] = useState(false)
+
   // Typing effect for the terminal logs when the section becomes active
   useEffect(() => {
     if (activeSection !== 5) {
-      setTerminalLines([])
+      // Do not reset if animation already ran
+      if (!hasStarted) {
+        setTerminalLines([])
+      }
       return
     }
+
+    // If already started, don't re‑run the interval
+    if (hasStarted) return
+    setHasStarted(true)
 
     let currentLine = 0
     const interval = setInterval(() => {
@@ -39,7 +49,7 @@ function Leetcode({ activeSection }) {
     }, 450)
 
     return () => clearInterval(interval)
-  }, [activeSection])
+  }, [activeSection, hasStarted])
 
   // Mock contest history for SVG rating graph
   const ratingData = [
@@ -94,8 +104,8 @@ function Leetcode({ activeSection }) {
               padding: '8px 18px',
               fontSize: '0.85rem',
               borderRadius: '12px',
-              backgroundColor: activeTab === 'stats' ? 'rgba(49, 87, 79, 0.08)' : 'transparent',
-              border: '1px solid rgba(49, 87, 79, 0.2)'
+              backgroundColor: activeTab === 'stats' ? 'rgba(14, 36, 49, 0.08)' : 'transparent',
+              border: '1px solid rgba(14, 36, 49, 0.2)'
             }}
           >
             Statistics
@@ -107,8 +117,8 @@ function Leetcode({ activeSection }) {
               padding: '8px 18px',
               fontSize: '0.85rem',
               borderRadius: '12px',
-              backgroundColor: activeTab === 'chart' ? 'rgba(49, 87, 79, 0.08)' : 'transparent',
-              border: '1px solid rgba(49, 87, 79, 0.2)'
+              backgroundColor: activeTab === 'chart' ? 'rgba(14, 36, 49, 0.08)' : 'transparent',
+              border: '1px solid rgba(14, 36, 49, 0.2)'
             }}
           >
             Contest Rating Graph
@@ -151,9 +161,9 @@ function Leetcode({ activeSection }) {
             <div style={{ width: '100%', overflow: 'hidden' }}>
               <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} style={{ width: '100%', height: '100%' }}>
                 {/* Grid Lines */}
-                <line x1="20" y1="20" x2="380" y2="20" stroke="rgba(49, 87, 79, 0.05)" />
-                <line x1="20" y1="70" x2="380" y2="70" stroke="rgba(49, 87, 79, 0.05)" />
-                <line x1="20" y1="120" x2="380" y2="120" stroke="rgba(49, 87, 79, 0.05)" />
+                <line x1="20" y1="20" x2="380" y2="20" stroke="rgba(14, 36, 49, 0.05)" />
+                <line x1="20" y1="70" x2="380" y2="70" stroke="rgba(14, 36, 49, 0.05)" />
+                <line x1="20" y1="120" x2="380" y2="120" stroke="rgba(14, 36, 49, 0.05)" />
                 
                 {/* SVG Curve Path */}
                 <polyline
@@ -235,7 +245,7 @@ function Leetcode({ activeSection }) {
             gap: '8px',
             color: '#ECE6DD'
           }}>
-            <div style={{ color: '#7C9A92', fontWeight: 'bold' }}>$ npm run leetcode-sync</div>
+            <div style={{ color: 'var(--color-gold)', fontWeight: 'bold' }}>$ npm run leetcode-sync</div>
             
             {terminalLines.map((line, idx) => (
               <div 
@@ -254,15 +264,15 @@ function Leetcode({ activeSection }) {
               <span style={{
                 width: '6px',
                 height: '14px',
-                background: '#7C9A92',
+                background: 'var(--color-gold)',
                 display: 'inline-block',
                 animation: 'blink 1s step-end infinite'
               }}></span>
             ) : (
-              <div style={{ color: '#7C9A92' }}>$ <span style={{
+              <div style={{ color: 'var(--color-gold)' }}>$ <span style={{
                 width: '6px',
                 height: '14px',
-                background: '#7C9A92',
+                background: 'var(--color-gold)',
                 display: 'inline-block',
                 animation: 'blink 1s step-end infinite'
               }}></span></div>
@@ -274,7 +284,7 @@ function Leetcode({ activeSection }) {
         <style dangerouslySetInnerHTML={{__html: `
           @keyframes blink {
             from, to { background-color: transparent }
-            50% { background-color: #7C9A92 }
+            50% { background-color: var(--color-gold) }
           }
         `}} />
       </div>

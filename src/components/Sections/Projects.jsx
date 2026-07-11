@@ -111,7 +111,7 @@ function Projects({ activeSection }) {
                 cursor: 'pointer',
                 overflow: 'hidden',
                 alignItems: 'center',
-                border: '1px solid rgba(49, 87, 79, 0.08)',
+                border: '1px solid rgba(14, 36, 49, 0.08)',
                 boxShadow: '0 15px 40px rgba(0, 0, 0, 0.02)'
               }}
             >
@@ -122,7 +122,7 @@ function Projects({ activeSection }) {
                 left: 0,
                 width: '100%',
                 height: '100%',
-                background: 'linear-gradient(225deg, rgba(124, 154, 146, 0.04) 0%, rgba(255, 255, 255, 0) 50%)',
+                background: 'linear-gradient(225deg, rgba(14, 36, 49, 0.04) 0%, rgba(255, 255, 255, 0) 50%)',
                 pointerEvents: 'none'
               }} />
 
@@ -131,7 +131,7 @@ function Projects({ activeSection }) {
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '16px',
-                borderRight: '1px solid rgba(49, 87, 79, 0.1)',
+                borderRight: '1px solid rgba(14, 36, 49, 0.1)',
                 paddingRight: '30px'
               }}>
                 <div style={{
@@ -140,10 +140,10 @@ function Projects({ activeSection }) {
                   gap: '16px'
                 }}>
                   <div style={{
-                    background: 'rgba(49, 87, 79, 0.06)',
+                    background: 'rgba(14, 36, 49, 0.06)',
                     padding: '12px',
                     borderRadius: '12px',
-                    border: '1px solid rgba(49, 87, 79, 0.1)',
+                    border: '1px solid rgba(14, 36, 49, 0.1)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
@@ -175,8 +175,8 @@ function Projects({ activeSection }) {
                     <span
                       key={tIdx}
                       style={{
-                        background: 'rgba(124, 154, 146, 0.08)',
-                        border: '1px solid rgba(124, 154, 146, 0.15)',
+                        background: 'rgba(14, 36, 49, 0.08)',
+                        border: '1px solid rgba(14, 36, 49, 0.15)',
                         color: 'var(--color-emerald)',
                         padding: '5px 12px',
                         borderRadius: '20px',

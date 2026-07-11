@@ -85,13 +85,13 @@ function SkillsGalaxy() {
       {/* Central Core Element */}
       <mesh>
         <sphereGeometry args={[0.22, 32, 32]} />
-        <meshBasicMaterial color="#31574F" transparent opacity={0.06} wireframe />
+        <meshBasicMaterial color="#0E2431" transparent opacity={0.06} wireframe />
       </mesh>
       <mesh scale={[0.8, 0.8, 0.8]}>
         <sphereGeometry args={[0.22, 32, 32]} />
         <meshPhysicalMaterial 
-          color="#31574F" 
-          emissive="#7C9A92"
+          color="#0E2431" 
+          emissive="#3F51B5"
           emissiveIntensity={1.0}
           roughness={0.2}
           metalness={0.1}
@@ -107,11 +107,11 @@ function SkillsGalaxy() {
           fontSize: '0.68rem',
           fontWeight: 700,
           color: '#FAFAF8',
-          background: '#31574F',
+          background: '#0E2431',
           padding: '6px 14px',
           borderRadius: '20px',
           whiteSpace: 'nowrap',
-          boxShadow: '0 4px 15px rgba(49, 87, 79, 0.2)',
+          boxShadow: '0 4px 15px rgba(14, 36, 49, 0.2)',
           border: '1px solid rgba(255, 255, 255, 0.15)',
           pointerEvents: 'none',
           textTransform: 'uppercase',
@@ -135,9 +135,9 @@ function SkillsGalaxy() {
               onMouseEnter={() => setHoveredNode(idx)}
               onMouseLeave={() => setHoveredNode(null)}
               style={{
-                background: hoveredNode === idx ? '#31574F' : 'rgba(250, 250, 248, 0.85)',
+                background: hoveredNode === idx ? '#0E2431' : 'rgba(250, 250, 248, 0.85)',
                 color: hoveredNode === idx ? '#FAFAF8' : '#222222',
-                border: hoveredNode === idx ? '1px solid #7C9A92' : '1px solid rgba(49, 87, 79, 0.15)',
+                border: hoveredNode === idx ? '1px solid #3F51B5' : '1px solid rgba(14, 36, 49, 0.15)',
                 backdropFilter: 'blur(10px)',
                 WebkitBackdropFilter: 'blur(10px)',
                 padding: '6px 12px',
@@ -147,7 +147,7 @@ function SkillsGalaxy() {
                 fontWeight: 600,
                 whiteSpace: 'nowrap',
                 boxShadow: hoveredNode === idx 
-                  ? '0 6px 12px rgba(49, 87, 79, 0.15)' 
+                  ? '0 6px 12px rgba(14, 36, 49, 0.15)' 
                   : '0 2px 4px rgba(0, 0, 0, 0.02)',
                 transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
                 transform: hoveredNode === idx ? 'scale(1.1)' : 'scale(1.0)',

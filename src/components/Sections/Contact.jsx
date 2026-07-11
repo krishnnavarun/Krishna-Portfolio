@@ -81,8 +81,8 @@ function Contact({ activeSection }) {
                 alignItems: 'center',
                 gap: '16px',
                 padding: '12px 16px',
-                background: 'rgba(49, 87, 79, 0.03)',
-                border: '1px solid rgba(49, 87, 79, 0.08)',
+                background: 'rgba(14, 36, 49, 0.03)',
+                border: '1px solid rgba(14, 36, 49, 0.08)',
                 borderRadius: '12px',
                 cursor: 'pointer'
               }}
@@ -117,7 +117,7 @@ function Contact({ activeSection }) {
           flexDirection: 'column',
           alignItems: 'center',
           textAlign: 'center',
-          borderLeft: '1px solid rgba(49, 87, 79, 0.1)',
+          borderLeft: '1px solid rgba(14, 36, 49, 0.1)',
           paddingLeft: '30px',
           gap: '15px'
         }}>
@@ -145,7 +145,7 @@ function Contact({ activeSection }) {
           <span style={{
             fontSize: '0.72rem',
             color: 'var(--color-emerald)',
-            background: 'rgba(124, 154, 146, 0.12)',
+            background: 'rgba(14, 36, 49, 0.12)',
             padding: '4px 10px',
             borderRadius: '20px',
             fontWeight: 700,

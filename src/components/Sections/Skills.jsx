@@ -66,7 +66,7 @@ function Skills() {
             display: 'flex',
             flexDirection: 'column',
             gap: '24px',
-            border: '1px solid rgba(49, 87, 79, 0.08)',
+            border: '1px solid rgba(14, 36, 49, 0.08)',
             boxShadow: '0 15px 40px rgba(0, 0, 0, 0.02)'
           }}
         >
@@ -78,7 +78,7 @@ function Skills() {
                 display: 'flex', 
                 flexDirection: 'column', 
                 gap: '8px',
-                borderBottom: idx < categories.length - 1 ? '1px solid rgba(49, 87, 79, 0.08)' : 'none',
+                borderBottom: idx < categories.length - 1 ? '1px solid rgba(14, 36, 49, 0.08)' : 'none',
                 paddingBottom: idx < categories.length - 1 ? '16px' : '0'
               }}
             >
@@ -99,14 +99,14 @@ function Skills() {
                     key={tIdx} 
                     className="glass-card"
                     style={{
-                      background: 'rgba(49, 87, 79, 0.03)',
+                      background: 'rgba(14, 36, 49, 0.03)',
                       color: 'var(--color-charcoal)',
                       padding: '5px 12px',
                       borderRadius: '8px',
                       fontSize: '0.8rem',
                       fontFamily: 'var(--font-sans)',
                       fontWeight: 500,
-                      border: '1px solid rgba(49, 87, 79, 0.08)'
+                      border: '1px solid rgba(14, 36, 49, 0.08)'
                     }}
                   >
                     {tech}
@@ -140,8 +140,8 @@ function Skills() {
           style={{ width: '100%', height: '100%', pointerEvents: 'auto' }}
         >
           <ambientLight intensity={1.5} color="#FAFAF8" />
-          <directionalLight position={[2, 5, 2]} intensity={1.5} color="#7C9A92" />
-          <pointLight position={[-3, -3, -2]} intensity={1.2} color="#C19A6B" />
+          <directionalLight position={[2, 5, 2]} intensity={1.5} color="#3F51B5" />
+          <pointLight position={[-3, -3, -2]} intensity={1.2} color="#FF7B00" />
           <Suspense fallback={null}>
             <SkillsGalaxy />
           </Suspense>
